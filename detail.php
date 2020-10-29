@@ -10,9 +10,48 @@ $preference = new MercadoPago\Preference();
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
-$item->title = 'Mi producto';
+$item->id = "1234";
+$item->title = $_POST['title'];
+$item->description = "Dispositivo móvil de Tienda e-commerce";
 $item->quantity = 1;
-$item->unit_price = 75.56;
+$item->currency_id = "MXN";
+$item->unit_price = $_POST['price'];
+$item->external_reference = "mamr.213@gmail.com";
+$item->picture_url = $_POST['img'];
+
+$payer = new MercadoPago\Payer();
+$payer->name = "Lalo";
+$payer->surname = "Landa";
+$payer->email = "charles@hotmail.com";
+$payer->date_created = "2018-06-02T12:58:41.425-04:00";
+$payer->phone = array(
+  "area_code" => "52",
+  "number" => "5549737300"
+);
+
+$payer->address = array(
+  "street_name" => "Insurgentes Sur",
+  "street_number" => 1602,
+  "zip_code" => "03940"
+);
+$preference->payer = $payer;
+$preference->back_urls = array(
+    "success" => "https://www.tu-sitio/success",
+    "failure" => "http://www.tu-sitio/failure",
+    "pending" => "http://www.tu-sitio/pending"
+);
+$preference->auto_return = "approved";
+$preference = new MercadoPago\Preference();
+// ...
+$preference->payment_methods = array(
+  "excluded_payment_methods" => array(
+    array("id" => "amex")
+  ),
+  "excluded_payment_types" => array(
+    array("id" => "atm")
+  ),
+  "installments" => 6
+);
 $preference->items = array($item);
 $preference->save();
 ?>
