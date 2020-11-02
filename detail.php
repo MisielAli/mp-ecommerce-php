@@ -26,7 +26,7 @@ $item->picture_url = "https://misielali-mp-commerce-php.herokuapp.com/".substr($
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
-$payer->email = "charles@hotmail.com";
+$payer->email = "test_user_92398138@testuser.com";
 $payer->date_created = "2018-06-02T12:58:41.425-04:00";
 $payer->phone = array(
   "area_code" => "52",
@@ -38,8 +38,11 @@ $payer->address = array(
   "street_number" => 1602,
   "zip_code" => "03940"
 );
-$preference = new MercadoPago\Preference();
+
 $preference->payer = $payer;
+
+$preference = new MercadoPago\Preference();
+
 $preference->back_urls = array(
     "success" => "https://misielali-mp-commerce-php.herokuapp.com/success.php",
     "failure" => "https://misielali-mp-commerce-php.herokuapp.com/failure.php",
