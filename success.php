@@ -65,10 +65,10 @@
             <div class="as-search-results as-filter-open as-category-landing as-desktop" id="as-search-results">
 
                 <h3>Pago realizado con exito, recibira un correo electronico confirmando su compra.</h3>
-                <span>id del pago = $_GET["collection_id"]</span>
-                <span>Referencia = $_GET["external_reference"]</span>
-                <span>id de la preferencia = $_GET["preference_id"]</span>
-                <span>id del sitio = $_GET["site_id"]</span>
+                <span>id del pago = <?php echo $_GET["collection_id"] ?></span>
+                <span>Referencia = <?php echo $_GET["external_reference"] ?></span>
+                <span>id de la preferencia = <?php echo $_GET["preference_id"] ?></span>
+                <span>id del sitio = <?php echo $_GET["site_id"] ?> </span>
             
             </div>
         </div>

@@ -34,15 +34,16 @@ $payer->address = array(
   "street_number" => 1602,
   "zip_code" => "03940"
 );
+$preference = new MercadoPago\Preference();
 $preference->payer = $payer;
 $preference->back_urls = array(
-    "success" => "https://www.tu-sitio/success",
-    "failure" => "http://www.tu-sitio/failure",
-    "pending" => "http://www.tu-sitio/pending"
+    "success" => "https://misielali-mp-commerce-php.herokuapp.com/success.php",
+    "failure" => "https://misielali-mp-commerce-php.herokuapp.com/failure.php",
+    "pending" => "https://misielali-mp-commerce-php.herokuapp.com/pending.php"
 );
 $preference->auto_return = "approved";
-$preference = new MercadoPago\Preference();
-// ...
+
+$preference->notification_url = "https://mercadopagophp-13817.firebaseio.com/pagos.json";
 $preference->payment_methods = array(
   "excluded_payment_methods" => array(
     array("id" => "amex")
