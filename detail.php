@@ -43,7 +43,7 @@ $preference->back_urls = array(
     "pending" => "https://misielali-mp-commerce-php.herokuapp.com/pending.php"
 );
 $preference->auto_return = "approved";
-$preference->notification_url = "https://mercadopagophp-13817.firebaseio.com/pagos.json"
+$preference->notification_url = "https://mercadopagophp-13817.firebaseio.com/pagos.json";
 
 // ...
 $preference->payment_methods = array(
