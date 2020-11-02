@@ -17,7 +17,7 @@ $item->quantity = 1;
 $item->currency_id = "MXN";
 $item->unit_price = $_POST['price'];
 $item->external_reference = "mamr.213@gmail.com";
-$item->picture_url = $_POST['img'];
+$item->picture_url = "https://misielali-mp-commerce-php.herokuapp.com/".$_POST['img'];
 
 $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
@@ -184,6 +184,9 @@ $preference->save();
                                         </div>
                                         <h3 >
                                             <?php echo $_POST['price'] ?>
+                                        </h3>
+                                        <h3 >
+                                            <?php echo $_POST['img'] ?>
                                         </h3>
                                         <h3 >
                                             <?php echo "$" . $_POST['unit'] ?>
