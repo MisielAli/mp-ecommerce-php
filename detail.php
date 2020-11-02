@@ -186,9 +186,6 @@ $preference->save();
                                             <?php echo $_POST['price'] ?>
                                         </h3>
                                         <h3 >
-                                            <?php echo "https://misielali-mp-commerce-php.herokuapp.com/".substr($_POST['img'],2) ?>
-                                        </h3>
-                                        <h3 >
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                         <h3 >
